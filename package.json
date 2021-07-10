@@ -1,0 +1,11 @@
+{
+    "name": "calculadora-rest-gqso-golang",
+    "version": "1.0.0",
+    "repository": "https://github.com/Manuel-Antunes/Calculadora-Rest-GQSO-Golang.git",
+    "author": "Manuel Nascimento <57446204+Manuel-Antunes@users.noreply.github.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "gin --all -i run main.go",
+        "start": "go run ."
+    }
+}

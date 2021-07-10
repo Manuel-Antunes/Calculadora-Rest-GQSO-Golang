@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"time"
 
 	"github.com/labstack/echo"
 )
@@ -14,10 +13,6 @@ func main() {
 	})
 	e.GET("/soma/:x/:y", Sum)
 	e.GET("/sub/:x/:y", Sub)
-	s := &http.Server{
-		Addr:         ":3333",
-		ReadTimeout:  5 * time.Minute,
-		WriteTimeout: 5 * time.Minute,
-	}
-	e.Logger.Fatal(e.StartServer(s))
+	e.Logger.Print("Listening on port 8080")
+	e.Logger.Fatal(e.Start(":8080"))
 }
