@@ -1,17 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"time"
+
+	"github.com/labstack/echo"
 )
 
-type CalcServer bool
-
-func (a CalcServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
-}
-
 func main() {
-	var k CalcServer
-	http.ListenAndServe(":3333", k)
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello World!")
+	})
+	s := &http.Server{
+		Addr:         ":3333",
+		ReadTimeout:  5 * time.Minute,
+		WriteTimeout: 5 * time.Minute,
+	}
+	e.Logger.Fatal(e.StartServer(s))
 }
