@@ -9,11 +9,21 @@ Uma calculadora que usa requisições HTTP em um servidor de estado representati
 
 ## Como funciona ? 🧐
 
-Rota de soma
-> base_url/sum/:val1/:val2
+### Rota de soma
+> base_url/soma/:val1/:val2
 
-Rota de subtração
-> base_url/sum/:val1/:val2
+Exemplo
+> localhost:8080/soma/1/1
+
+> 2
+
+### Rota de subtração
+> base_url/sub/:val1/:val2
+
+Exemplo
+> localhost:8080/sub/1/1
+
+> 0
 
 ## Contribuição 🤝
 
