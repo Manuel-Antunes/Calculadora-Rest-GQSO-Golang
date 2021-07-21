@@ -3,9 +3,9 @@
 Uma calculadora que usa requisições HTTP em um servidor de estado representativo para retornar o resultado de operações
 
 ## Techs 🚀
-* Echo 
-* Golang
-* Gin/CLI
+* [Echo](https://echo.labstack.com/) 
+* [Golang](https://golang.org/)
+* [Gin/CLI](https://github.com/codegangsta/gin)
 
 ## Como funciona ? 🧐
 
