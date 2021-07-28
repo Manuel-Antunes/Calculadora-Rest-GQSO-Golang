@@ -29,6 +29,12 @@ Exemplo
 
 Pode mandar um PR irmão :3 e um email para mena1@alununo.ifal.edu.br
 
+## Rodando 😎
+
+`
+    go run main.go
+`
+
 ## Autor
 
 [Manuel Eduardo Nascimento Antunes](https://github.com/Manuel-Antunes)
