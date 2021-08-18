@@ -11,8 +11,6 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello World!")
 	})
-	e.GET("/soma/:x/:y", Sum)
-	e.GET("/sub/:x/:y", Sub)
 	e.Logger.Print("Listening on port 8080")
 	e.Logger.Fatal(e.Start(":8080"))
 }
