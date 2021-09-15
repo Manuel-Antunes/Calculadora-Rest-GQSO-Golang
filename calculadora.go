@@ -7,7 +7,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-type Result struct {
+type result struct {
 	Value float64 `json:"value" bson:"value,omitempty"`
 }
 
