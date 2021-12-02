@@ -1,24 +1,22 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
 	"strconv"
-
-	"github.com/labstack/echo"
 )
 
 type result struct {
 	Value float64 `json:"value" bson:"value,omitempty"`
 }
 
-func Sum(c echo.Context) error {
-	x, err := strconv.ParseFloat(c.Param("x"), 64)
+func Sum(op1, op2 string) (*result, error) {
+	x, err := strconv.ParseFloat(op1, 64)
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Parametro x inválido")
+		return nil, fmt.Errorf("invalid input: %s", op1)
 	}
-	y, err := strconv.ParseFloat(c.Param("y"), 64)
+	y, err := strconv.ParseFloat(op2, 64)
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Parametro y inválido")
+		return nil, fmt.Errorf("invalid input: %s", op2)
 	}
-	return c.JSON(http.StatusOK, Result{Value: x + y})
+	return &result{Value: x + y}, nil
 }
